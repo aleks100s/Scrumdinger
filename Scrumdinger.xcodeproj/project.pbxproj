@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		274748772AC37EDC00F1D9F6 /* StandupFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274748762AC37EDC00F1D9F6 /* StandupFormTests.swift */; };
 		2747487B2AC4C55B00F1D9F6 /* StandupsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747487A2AC4C55B00F1D9F6 /* StandupsListTests.swift */; };
-		2747487F2AC4C99200F1D9F6 /* StandupDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747487E2AC4C99200F1D9F6 /* StandupDetail.swift */; };
+		2747487F2AC4C99200F1D9F6 /* StandupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747487E2AC4C99200F1D9F6 /* StandupDetailView.swift */; };
 		274748812AC4C9A600F1D9F6 /* StandupDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274748802AC4C9A600F1D9F6 /* StandupDetailFeature.swift */; };
 		274748832AC4CFE100F1D9F6 /* StandupDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274748822AC4CFE100F1D9F6 /* StandupDetailTests.swift */; };
+		276A761F2AC707EB0047D5F3 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A761E2AC707EB0047D5F3 /* AppFeature.swift */; };
+		276A76212AC7581E0047D5F3 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76202AC7581E0047D5F3 /* AppTests.swift */; };
 		27B8E2712AC36A960006BA72 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2702AC36A960006BA72 /* ScrumdingerApp.swift */; };
-		27B8E2732AC36A960006BA72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2722AC36A960006BA72 /* ContentView.swift */; };
+		27B8E2732AC36A960006BA72 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2722AC36A960006BA72 /* AppView.swift */; };
 		27B8E2752AC36A970006BA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B8E2742AC36A970006BA72 /* Assets.xcassets */; };
 		27B8E2782AC36A970006BA72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B8E2772AC36A970006BA72 /* Preview Assets.xcassets */; };
 		27B8E2802AC36BC70006BA72 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 27B8E27F2AC36BC70006BA72 /* ComposableArchitecture */; };
-		27B8E2822AC36BD00006BA72 /* StandupsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2812AC36BD00006BA72 /* StandupsList.swift */; };
+		27B8E2822AC36BD00006BA72 /* StandupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2812AC36BD00006BA72 /* StandupListView.swift */; };
 		27B8E2842AC36C7A0006BA72 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2832AC36C7A0006BA72 /* Models.swift */; };
 		27B8E2872AC36CD80006BA72 /* StandupsListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2862AC36CD80006BA72 /* StandupsListFeature.swift */; };
 		27B8E2892AC36E500006BA72 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2882AC36E500006BA72 /* CardView.swift */; };
 		27B8E28C2AC36E960006BA72 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E28B2AC36E960006BA72 /* TrailingIconLabelStyle.swift */; };
-		27B8E2902AC36FC10006BA72 /* StandupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E28F2AC36FC10006BA72 /* StandupForm.swift */; };
+		27B8E2902AC36FC10006BA72 /* StandupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E28F2AC36FC10006BA72 /* StandupFormView.swift */; };
 		27B8E2922AC36FEC0006BA72 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2912AC36FEC0006BA72 /* ThemePicker.swift */; };
 		27B8E2942AC370760006BA72 /* StandupFormFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2932AC370760006BA72 /* StandupFormFeature.swift */; };
 		27B8E2972AC375590006BA72 /* Duration+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2962AC375590006BA72 /* Duration+.swift */; };
@@ -42,20 +44,22 @@
 		2747486D2AC37EC400F1D9F6 /* ScrumdingerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrumdingerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		274748762AC37EDC00F1D9F6 /* StandupFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupFormTests.swift; sourceTree = "<group>"; };
 		2747487A2AC4C55B00F1D9F6 /* StandupsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupsListTests.swift; sourceTree = "<group>"; };
-		2747487E2AC4C99200F1D9F6 /* StandupDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupDetail.swift; sourceTree = "<group>"; };
+		2747487E2AC4C99200F1D9F6 /* StandupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupDetailView.swift; sourceTree = "<group>"; };
 		274748802AC4C9A600F1D9F6 /* StandupDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupDetailFeature.swift; sourceTree = "<group>"; };
 		274748822AC4CFE100F1D9F6 /* StandupDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupDetailTests.swift; sourceTree = "<group>"; };
+		276A761E2AC707EB0047D5F3 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		276A76202AC7581E0047D5F3 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		27B8E26D2AC36A960006BA72 /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B8E2702AC36A960006BA72 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
-		27B8E2722AC36A960006BA72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		27B8E2722AC36A960006BA72 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		27B8E2742AC36A970006BA72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27B8E2772AC36A970006BA72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		27B8E2812AC36BD00006BA72 /* StandupsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupsList.swift; sourceTree = "<group>"; };
+		27B8E2812AC36BD00006BA72 /* StandupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupListView.swift; sourceTree = "<group>"; };
 		27B8E2832AC36C7A0006BA72 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		27B8E2862AC36CD80006BA72 /* StandupsListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupsListFeature.swift; sourceTree = "<group>"; };
 		27B8E2882AC36E500006BA72 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		27B8E28B2AC36E960006BA72 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
-		27B8E28F2AC36FC10006BA72 /* StandupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupForm.swift; sourceTree = "<group>"; };
+		27B8E28F2AC36FC10006BA72 /* StandupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupFormView.swift; sourceTree = "<group>"; };
 		27B8E2912AC36FEC0006BA72 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		27B8E2932AC370760006BA72 /* StandupFormFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupFormFeature.swift; sourceTree = "<group>"; };
 		27B8E2962AC375590006BA72 /* Duration+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duration+.swift"; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 				274748762AC37EDC00F1D9F6 /* StandupFormTests.swift */,
 				2747487A2AC4C55B00F1D9F6 /* StandupsListTests.swift */,
 				274748822AC4CFE100F1D9F6 /* StandupDetailTests.swift */,
+				276A76202AC7581E0047D5F3 /* AppTests.swift */,
 			);
 			path = ScrumdingerTests;
 			sourceTree = "<group>";
@@ -119,10 +124,18 @@
 		2747487D2AC4C98500F1D9F6 /* StandupDetail */ = {
 			isa = PBXGroup;
 			children = (
-				2747487E2AC4C99200F1D9F6 /* StandupDetail.swift */,
+				2747487E2AC4C99200F1D9F6 /* StandupDetailView.swift */,
 				274748802AC4C9A600F1D9F6 /* StandupDetailFeature.swift */,
 			);
 			path = StandupDetail;
+			sourceTree = "<group>";
+		};
+		276A761D2AC707A80047D5F3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				27B8E2832AC36C7A0006BA72 /* Models.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		27B8E2642AC36A960006BA72 = {
@@ -146,10 +159,11 @@
 		27B8E26F2AC36A960006BA72 /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
+				276A761D2AC707A80047D5F3 /* Domain */,
 				2747487C2AC4C97A00F1D9F6 /* Features */,
 				27B8E28D2AC36FA90006BA72 /* Library */,
-				27B8E2832AC36C7A0006BA72 /* Models.swift */,
-				27B8E2722AC36A960006BA72 /* ContentView.swift */,
+				27B8E2722AC36A960006BA72 /* AppView.swift */,
+				276A761E2AC707EB0047D5F3 /* AppFeature.swift */,
 				27B8E2702AC36A960006BA72 /* ScrumdingerApp.swift */,
 				27B8E2742AC36A970006BA72 /* Assets.xcassets */,
 				27B8E2762AC36A970006BA72 /* Preview Content */,
@@ -169,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				274748782AC4BCC300F1D9F6 /* UIComponents */,
-				27B8E2812AC36BD00006BA72 /* StandupsList.swift */,
+				27B8E2812AC36BD00006BA72 /* StandupListView.swift */,
 				27B8E2862AC36CD80006BA72 /* StandupsListFeature.swift */,
 			);
 			path = StandupsList;
@@ -196,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				274748792AC4BCD200F1D9F6 /* UIComponents */,
-				27B8E28F2AC36FC10006BA72 /* StandupForm.swift */,
+				27B8E28F2AC36FC10006BA72 /* StandupFormView.swift */,
 				27B8E2932AC370760006BA72 /* StandupFormFeature.swift */,
 			);
 			path = StandupForm;
@@ -317,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				274748772AC37EDC00F1D9F6 /* StandupFormTests.swift in Sources */,
+				276A76212AC7581E0047D5F3 /* AppTests.swift in Sources */,
 				2747487B2AC4C55B00F1D9F6 /* StandupsListTests.swift in Sources */,
 				274748832AC4CFE100F1D9F6 /* StandupDetailTests.swift in Sources */,
 			);
@@ -326,19 +341,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27B8E2732AC36A960006BA72 /* ContentView.swift in Sources */,
+				27B8E2732AC36A960006BA72 /* AppView.swift in Sources */,
 				27B8E2872AC36CD80006BA72 /* StandupsListFeature.swift in Sources */,
-				27B8E2822AC36BD00006BA72 /* StandupsList.swift in Sources */,
+				27B8E2822AC36BD00006BA72 /* StandupListView.swift in Sources */,
 				27B8E2922AC36FEC0006BA72 /* ThemePicker.swift in Sources */,
 				27B8E2712AC36A960006BA72 /* ScrumdingerApp.swift in Sources */,
 				27B8E2972AC375590006BA72 /* Duration+.swift in Sources */,
 				27B8E2892AC36E500006BA72 /* CardView.swift in Sources */,
 				274748812AC4C9A600F1D9F6 /* StandupDetailFeature.swift in Sources */,
 				27B8E2842AC36C7A0006BA72 /* Models.swift in Sources */,
-				2747487F2AC4C99200F1D9F6 /* StandupDetail.swift in Sources */,
+				2747487F2AC4C99200F1D9F6 /* StandupDetailView.swift in Sources */,
 				27B8E28C2AC36E960006BA72 /* TrailingIconLabelStyle.swift in Sources */,
 				27B8E2942AC370760006BA72 /* StandupFormFeature.swift in Sources */,
-				27B8E2902AC36FC10006BA72 /* StandupForm.swift in Sources */,
+				276A761F2AC707EB0047D5F3 /* AppFeature.swift in Sources */,
+				27B8E2902AC36FC10006BA72 /* StandupFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

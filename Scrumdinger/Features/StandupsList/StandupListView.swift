@@ -8,8 +8,12 @@ struct StandupListView: View {
 		WithViewStore(self.store, observe: \.standups) { viewStore in
 			List {
 				ForEach(viewStore.state) { standup in
-					CardView(standup: standup)
-						.listRowBackground(standup.theme.mainColor)
+					Button {
+						viewStore.send(.standupCardTapped(standup))
+					} label: {
+						CardView(standup: standup)
+					}
+					.listRowBackground(standup.theme.mainColor)
 				}
 			}
 			.navigationTitle("Daily standups")

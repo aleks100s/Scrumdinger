@@ -7,11 +7,12 @@ struct StandupsListFeature: Reducer {
 		var standups: IdentifiedArrayOf<Standup> = []
 	}
 	
-	enum Action {
+	enum Action: Equatable {
 		case addButtonTapped
 		case addStandup(PresentationAction<StandupFormFeature.Action>)
 		case cancelStandupButtonTapped
 		case saveStandupButtonTapped
+		case standupCardTapped(Standup)
 	}
 	
 	@Dependency(\.uuid) var uuid
@@ -35,6 +36,9 @@ struct StandupsListFeature: Reducer {
 				
 				state.standups.append(standup)
 				state.addStandup = nil
+				return .none
+				
+			case .standupCardTapped:
 				return .none
 			}
 		}

@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct StandupDetail: View {
+struct StandupDetailView: View {
 	let store: StoreOf<StandupDetailFeature>
 	
 	var body: some View {
@@ -84,6 +84,7 @@ struct StandupDetail: View {
 					viewStore.send(.editButtonTapped)
 				}
 			}
+			.alert(store: store.scope(state: \.$alert, action: { .alert($0) }))
 			.sheet(store: store.scope(state: \.$editStandup, action: { .editStandup($0) })) { store in
 				NavigationStack {
 					StandupFormView(store: store)
@@ -109,7 +110,7 @@ struct StandupDetail: View {
 
 #Preview {
 	NavigationStack {
-		StandupDetail(
+		StandupDetailView(
 			store:
 				Store(initialState: StandupDetailFeature.State(standup: .mock)) {
 					StandupDetailFeature()
