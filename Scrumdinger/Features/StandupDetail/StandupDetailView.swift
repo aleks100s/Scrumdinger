@@ -15,8 +15,8 @@ struct StandupDetailView: View {
 		WithViewStore(store, observe: { $0 }) { viewStore in
 			List {
 				Section {
-					NavigationLink {
-						// Do something
+					Button {
+						viewStore.send(.delegate(.recordMeeting(viewStore.standup)))
 					} label: {
 						Label("Start Meeting", systemImage: "timer")
 							.font(.headline)
@@ -84,8 +84,16 @@ struct StandupDetailView: View {
 					viewStore.send(.editButtonTapped)
 				}
 			}
-			.alert(store: store.scope(state: \.$alert, action: { .alert($0) }))
-			.sheet(store: store.scope(state: \.$editStandup, action: { .editStandup($0) })) { store in
+			.alert(
+				store: store.scope(state: \.$destination, action: { .destination($0) }),
+				state: /StandupDetailFeature.Destination.State.alert,
+				action: StandupDetailFeature.Destination.Action.alert
+			)
+			.sheet(
+				store: store.scope(state: \.$destination, action: { .destination($0) }),
+				state: /StandupDetailFeature.Destination.State.editStandup,
+				action: StandupDetailFeature.Destination.Action.editStandup
+			) { store in
 				NavigationStack {
 					StandupFormView(store: store)
 						.navigationTitle("Edit standup")

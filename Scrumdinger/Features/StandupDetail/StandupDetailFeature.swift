@@ -10,77 +10,101 @@ import ComposableArchitecture
 
 struct StandupDetailFeature: Reducer {
 	struct State: Equatable {
-		@PresentationState  var editStandup: StandupFormFeature.State?
-		@PresentationState var alert: AlertState<Action.Alert>?
+		@PresentationState var destination: Destination.State?
 		var standup: Standup
 	}
 	
 	enum Action: Equatable {
 		enum Delegate: Equatable {
 			case standupUpdate(Standup)
+			case deleteStandup(id: Standup.ID)
+			case recordMeeting(Standup)
 		}
 		
 		enum Alert {
 			case confirmDeletion
 		}
 		
-		case alert(PresentationAction<Alert>)
 		case editButtonTapped
 		case deleteButtonTapped
 		case deleteMeetings(IndexSet)
-		case editStandup(PresentationAction<StandupFormFeature.Action>)
 		case saveStandupButtonTapped
 		case cancelStandupButtonTapped
 		case delegate(Delegate)
+		case destination(PresentationAction<Destination.Action>)
 	}
+	
+	struct Destination: Reducer {
+		enum State: Equatable {
+			case alert(AlertState<Action.Alert>)
+			case editStandup(StandupFormFeature.State)
+		}
+		
+		enum Action: Equatable {
+			enum Alert {
+				case confirmDeletion
+			}
+			case alert(Alert)
+			case editStandup(StandupFormFeature.Action)
+		}
+		
+		var body: some ReducerOf<Self> {
+			Scope(state: /State.editStandup, action: /Action.editStandup) {
+				StandupFormFeature()
+			}
+		}
+	}
+	
+	@Dependency(\.dismiss) var dismiss
 	
 	var body: some ReducerOf<Self> {
 		Reduce { state, action in
 			switch action {
-			case .alert(.presented(.confirmDeletion)):
-				return .none
+			case .destination(.presented(.alert(.confirmDeletion))):
+				return .run { [id = state.standup.id] send in
+					await send(.delegate(.deleteStandup(id: id)))
+					await self.dismiss()
+				}
 				
-			case .alert(.dismiss):
+			case .destination:
 				return .none
 				
 			case .editButtonTapped:
-				state.editStandup = StandupFormFeature.State(standup: state.standup)
+				state.destination = .editStandup(StandupFormFeature.State(standup: state.standup))
 				return .none
 				
 			case .deleteButtonTapped:
-				state.alert = AlertState(title: {
-					TextState("Are you sure?")
-				}, actions: {
-					ButtonState(role: .destructive, action: .confirmDeletion) {
-						TextState("Delete")
-					}
-				})
+				state.destination = .alert(
+					AlertState(title: {
+						TextState("Are you sure?")
+					}, actions: {
+						ButtonState(role: .destructive, action: .confirmDeletion) {
+							TextState("Delete")
+						}
+					})
+				)
 				return .none
 				
 			case let .deleteMeetings(indices):
 				state.standup.meetings.remove(atOffsets: indices)
 				return .none
 				
-			case .editStandup:
-				return .none
-				
 			case .saveStandupButtonTapped:
-				guard let standup = state.editStandup?.standup else { return .none }
-				state.standup = standup
-				state.editStandup = nil
+				guard case let .editStandup(standupForm) = state.destination else { return .none }
+				state.standup = standupForm.standup
+				state.destination = nil
 				return .none
 				
 			case .cancelStandupButtonTapped:
-				state.editStandup = nil
+				state.destination = nil
 				return .none
 				
 			case .delegate:
 				return .none
 			}
 		}
-		.ifLet(\.$alert, action: /Action.alert)
-		.ifLet(\.$editStandup, action: /Action.editStandup) {
-			StandupFormFeature()
+		.ifLet(\.$destination, action: /Action.destination) {
+			Destination()
 		}
 		.onChange(of: \.standup) { oldValue, newValue in
 			Reduce { state, action in

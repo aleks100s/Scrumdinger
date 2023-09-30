@@ -22,15 +22,20 @@ struct AppFeature: Reducer {
 	struct Path: Reducer {
 		enum State: Equatable {
 			case detail(StandupDetailFeature.State)
+			case recordMeeting(RecordMeetingFeature.State)
 		}
 		
 		enum Action: Equatable {
 			case detail(StandupDetailFeature.Action)
+			case recordMeeting(RecordMeetingFeature.Action)
 		}
 		
 		var body: some ReducerOf<Self> {
 			Scope(state: /State.detail, action: /Action.detail) {
 				StandupDetailFeature()
+			}
+			Scope(state: /State.recordMeeting, action: /Action.recordMeeting) {
+				RecordMeetingFeature()
 			}
 		}
 	}
@@ -46,6 +51,12 @@ struct AppFeature: Reducer {
 				switch action {
 				case let .standupUpdate(standup):
 					state.standupsListState.standups[id: standup.id] = standup
+					
+				case let .deleteStandup(id: id):
+					state.standupsListState.standups.remove(id: id)
+					
+				case let .recordMeeting(standup):
+					state.path.append(.recordMeeting(RecordMeetingFeature.State(standup: standup)))
 				}
 				return .none
 				
@@ -58,7 +69,7 @@ struct AppFeature: Reducer {
 					break
 				}
 				return .none
-				
+								
 			default:
 				return .none
 			}

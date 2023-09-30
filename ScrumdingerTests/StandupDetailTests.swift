@@ -24,7 +24,7 @@ final class StandupDetailTests: XCTestCase {
 		
 		await store.send(.editButtonTapped)
 		standup.title = "Point-Free Morning Sync"
-		await store.send(.editStandup(.presented(.set(\.$standup, standup))))
+		await store.send(.destination(.presented(.editStandup(.set(\.$standup, standup)))))
 		await store.send(.saveStandupButtonTapped) {
 			$0.standup.title = "Point-Free Morning Sync"
 		}

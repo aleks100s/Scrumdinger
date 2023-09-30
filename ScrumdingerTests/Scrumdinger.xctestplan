@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "4A45AE6D-7312-4644-A18C-5003D23AA918",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Scrumdinger.xcodeproj",
+      "identifier" : "27B8E26C2AC36A960006BA72",
+      "name" : "Scrumdinger"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Scrumdinger.xcodeproj",
+        "identifier" : "2747486C2AC37EC400F1D9F6",
+        "name" : "ScrumdingerTests"
+      }
+    }
+  ],
+  "version" : 1
+}
