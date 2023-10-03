@@ -52,6 +52,7 @@ struct RecordMeetingView: View {
 			.task {
 				await viewStore.send(.onTask).finish()
 			}
+			.alert(store: self.store.scope(state: \.$alert, action: { .alert($0) }))
 		}
 	}
 }

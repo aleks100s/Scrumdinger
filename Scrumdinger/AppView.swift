@@ -46,9 +46,37 @@ struct AppView: View {
     }
 }
 
-#Preview {
-	AppView(
-		store: Store(initialState: AppFeature.State()) {
+#Preview("Regular") {
+	return AppView(
+		store: Store(
+			initialState: AppFeature.State(
+				standupsListState: StandupsListFeature.State(
+					standups: [.mock]
+				)
+			)
+		) {
+			AppFeature()
+		}
+	)
+}
+
+#Preview("Quick finish meeting") {
+	var standup = Standup.mock
+	standup.duration = .seconds(6)
+	return AppView(
+		store: Store(
+			initialState: AppFeature.State(
+				path: StackState(
+					[
+						.detail(StandupDetailFeature.State(standup: standup)),
+						.recordMeeting(RecordMeetingFeature.State(standup: standup))
+					]
+				),
+				standupsListState: StandupsListFeature.State(
+					standups: [standup]
+				)
+			)
+		) {
 			AppFeature()
 		}
 	)

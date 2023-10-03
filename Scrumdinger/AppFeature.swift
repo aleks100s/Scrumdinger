@@ -40,6 +40,9 @@ struct AppFeature: Reducer {
 		}
 	}
 	
+	@Dependency(\.uuid) var uuid
+	@Dependency(\.date.now) var date
+	
 	var body: some ReducerOf<Self> {
 		Scope(state: \.standupsListState, action: /Action.standupsList) {
 			StandupsListFeature()
@@ -59,6 +62,22 @@ struct AppFeature: Reducer {
 					state.path.append(.recordMeeting(RecordMeetingFeature.State(standup: standup)))
 				}
 				return .none
+				
+			case let .path(.element(id: id, action: .recordMeeting(.delegate(action)))):
+				switch action {
+				case .saveMeeting:
+					guard let detailID = state.path.ids.dropLast().last else {
+						XCTFail("Record meeting is the last in the stack. A detail feature should proceed it.")
+						return .none
+					}
+					
+					let meeting = Meeting(id: uuid(), date: date, transcript: "N/A")
+					state.path[id: detailID, case: /Path.State.detail]?.standup.meetings.insert(meeting, at: 0)
+					
+					guard let standup = state.path[id: detailID, case: /Path.State.detail]?.standup else { return .none }
+					state.standupsListState.standups[id: standup.id] = standup
+					return .none
+				}
 				
 			case let .standupsList(listAction):
 				switch listAction {
