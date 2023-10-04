@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271DE1672ACDCA2B00A5C44B /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE1662ACDCA2B00A5C44B /* MeetingView.swift */; };
 		274748772AC37EDC00F1D9F6 /* StandupFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274748762AC37EDC00F1D9F6 /* StandupFormTests.swift */; };
 		2747487B2AC4C55B00F1D9F6 /* StandupsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747487A2AC4C55B00F1D9F6 /* StandupsListTests.swift */; };
 		2747487F2AC4C99200F1D9F6 /* StandupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747487E2AC4C99200F1D9F6 /* StandupDetailView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271DE1662ACDCA2B00A5C44B /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		2747486D2AC37EC400F1D9F6 /* ScrumdingerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrumdingerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		274748762AC37EDC00F1D9F6 /* StandupFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupFormTests.swift; sourceTree = "<group>"; };
 		2747487A2AC4C55B00F1D9F6 /* StandupsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupsListTests.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271DE1652ACDCA2500A5C44B /* Meeting */ = {
+			isa = PBXGroup;
+			children = (
+				271DE1662ACDCA2B00A5C44B /* MeetingView.swift */,
+			);
+			path = Meeting;
+			sourceTree = "<group>";
+		};
 		2747486E2AC37EC400F1D9F6 /* ScrumdingerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 		2747487C2AC4C97A00F1D9F6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				271DE1652ACDCA2500A5C44B /* Meeting */,
 				276A76442AC8305B0047D5F3 /* RecordMeeting */,
 				2747487D2AC4C98500F1D9F6 /* StandupDetail */,
 				27B8E2852AC36CC70006BA72 /* StandupsList */,
@@ -408,6 +419,7 @@
 				274748812AC4C9A600F1D9F6 /* StandupDetailFeature.swift in Sources */,
 				276A76482AC830860047D5F3 /* RecordMeetingFeature.swift in Sources */,
 				276A76512AC831440047D5F3 /* SpeakerArc.swift in Sources */,
+				271DE1672ACDCA2B00A5C44B /* MeetingView.swift in Sources */,
 				27B8E2842AC36C7A0006BA72 /* Models.swift in Sources */,
 				2747487F2AC4C99200F1D9F6 /* StandupDetailView.swift in Sources */,
 				27B8E28C2AC36E960006BA72 /* TrailingIconLabelStyle.swift in Sources */,

@@ -40,6 +40,9 @@ struct AppView: View {
 						 action: AppFeature.Path.Action.recordMeeting,
 						 then: RecordMeetingView.init(store:)
 					)
+					
+				case let .meeting(meeting, standup: standup):
+					MeetingView(meeting: meeting, standup: standup)
 				}
 			}
 		)

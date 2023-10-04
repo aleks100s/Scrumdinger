@@ -44,8 +44,8 @@ struct StandupDetailView: View {
 				if !viewStore.standup.meetings.isEmpty {
 					Section {
 						ForEach(viewStore.standup.meetings) { meeting in
-							NavigationLink {
-								// Do something
+							Button {
+								viewStore.send(.meetingTapped(meeting))
 							} label: {
 								HStack {
 									Image(systemName: "calendar")

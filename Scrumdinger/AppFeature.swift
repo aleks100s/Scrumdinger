@@ -23,11 +23,13 @@ struct AppFeature: Reducer {
 		enum State: Equatable {
 			case detail(StandupDetailFeature.State)
 			case recordMeeting(RecordMeetingFeature.State)
+			case meeting(Meeting, standup: Standup)
 		}
 		
 		enum Action: Equatable {
 			case detail(StandupDetailFeature.Action)
 			case recordMeeting(RecordMeetingFeature.Action)
+			case meeting(Never)
 		}
 		
 		var body: some ReducerOf<Self> {
@@ -60,18 +62,21 @@ struct AppFeature: Reducer {
 					
 				case let .recordMeeting(standup):
 					state.path.append(.recordMeeting(RecordMeetingFeature.State(standup: standup)))
+					
+				case let .showMeeting(meeting, standup: standup):
+					state.path.append(.meeting(meeting, standup: standup))
 				}
 				return .none
 				
 			case let .path(.element(id: id, action: .recordMeeting(.delegate(action)))):
 				switch action {
-				case .saveMeeting:
+				case let .saveMeeting(transcript):
 					guard let detailID = state.path.ids.dropLast().last else {
 						XCTFail("Record meeting is the last in the stack. A detail feature should proceed it.")
 						return .none
 					}
 					
-					let meeting = Meeting(id: uuid(), date: date, transcript: "N/A")
+					let meeting = Meeting(id: uuid(), date: date, transcript: transcript)
 					state.path[id: detailID, case: /Path.State.detail]?.standup.meetings.insert(meeting, at: 0)
 					
 					guard let standup = state.path[id: detailID, case: /Path.State.detail]?.standup else { return .none }

@@ -23,8 +23,8 @@ struct RecordMeetingFeature: Reducer {
 	}
 	
 	enum Action: Equatable {
-		enum Delegate {
-			case saveMeeting
+		enum Delegate: Equatable {
+			case saveMeeting(String)
 		}
 		
 		enum Alert: Equatable {
@@ -94,8 +94,8 @@ struct RecordMeetingFeature: Reducer {
 				let secondsPerAttendee = Int(state.standup.durationPerAttendee.components.seconds)
 				if state.secondsElapsed.isMultiple(of: secondsPerAttendee) {
 					if state.speakerIndex == state.standup.attendees.count - 1 {
-						return .run { send in
-							await send(.delegate(.saveMeeting))
+						return .run { [transcript = state.transcript] send in
+							await send(.delegate(.saveMeeting(transcript)))
 							await self.dismiss()
 						}
 					}
@@ -110,8 +110,8 @@ struct RecordMeetingFeature: Reducer {
 				return .run { _ in await self.dismiss() }
 				
 			case .alert(.presented(.confirmSave)):
-				return .run { send in
-					await send(.delegate(.saveMeeting))
+				return .run { [transcript = state.transcript] send in
+					await send(.delegate(.saveMeeting(transcript)))
 					await self.dismiss()
 				}
 				

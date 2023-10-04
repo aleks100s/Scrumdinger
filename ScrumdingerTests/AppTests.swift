@@ -130,7 +130,126 @@ final class AppTests: XCTestCase {
 					Meeting(
 						id: UUID(0),
 						date: Date(timeIntervalSince1970: 1234567890),
-						transcript: "N/A"
+						transcript: ""
+					)
+				]
+			XCTAssertEqual($0.path.count, 1)
+		}
+	}
+	
+	func testTimerRunOutEndMeeting_WithSpeechRecognizer() async {
+		let standup = Standup(
+			id: UUID(),
+			attendees: [Attendee(id: UUID())],
+			duration: .seconds(1),
+			meetings: [],
+			theme: .bubblegum,
+			title: "Point-Free"
+		)
+		
+		let store = TestStore(
+			initialState: AppFeature.State(
+				path: StackState([
+					.detail(
+						StandupDetailFeature.State(standup: standup)
+					),
+					.recordMeeting(
+						RecordMeetingFeature.State(standup: standup)
+					),
+				]),
+				standupsListState: StandupsListFeature.State(
+					standups: [standup]
+				)
+			)
+		) {
+			AppFeature()
+		}  withDependencies: {
+			$0.continuousClock = ImmediateClock()
+			$0.speechClient.requestAuthorization = { .authorized }
+			$0.speechClient.start = {
+				AsyncThrowingStream { continuation in
+					continuation.yield("This was a really good meeting!")
+					continuation.finish()
+				}
+			}
+			$0.date.now = Date(timeIntervalSince1970: 1234567890)
+			$0.uuid = .incrementing
+		}
+		
+		store.exhaustivity = .off
+		
+		await store.send(.path(.element(id: 1, action: .recordMeeting(.onTask))))
+		await store.skipReceivedActions()
+		
+		store.assert {
+			$0.path[id: 0, case: /AppFeature.Path.State.detail]?
+				.standup.meetings = [
+					Meeting(
+						id: UUID(0),
+						date: Date(timeIntervalSince1970: 1234567890),
+						transcript: "This was a really good meeting!"
+					)
+				]
+			XCTAssertEqual($0.path.count, 1)
+		}
+	}
+	
+	func testTimerRunOutEndMeeting_WithSpeechRecognizer_ThrowsErrorAndShowsAlert() async {
+		struct SomeError: Error {}
+		
+		let standup = Standup(
+			id: UUID(),
+			attendees: [Attendee(id: UUID())],
+			duration: .seconds(1),
+			meetings: [],
+			theme: .bubblegum,
+			title: "Point-Free"
+		)
+		
+		let store = TestStore(
+			initialState: AppFeature.State(
+				path: StackState([
+					.detail(
+						StandupDetailFeature.State(standup: standup)
+					),
+					.recordMeeting(
+						RecordMeetingFeature.State(standup: standup)
+					),
+				]),
+				standupsListState: StandupsListFeature.State(
+					standups: [standup]
+				)
+			)
+		) {
+			AppFeature()
+		}  withDependencies: {
+			$0.continuousClock = ImmediateClock()
+			$0.speechClient.requestAuthorization = { .authorized }
+			$0.speechClient.start = {
+				AsyncThrowingStream { continuation in
+					continuation.yield("This")
+					continuation.yield("This was a")
+					continuation.yield("This was a really good")
+					continuation.yield("This was a really good meeting!")
+					continuation.finish(throwing: SomeError())
+				}
+			}
+			$0.date.now = Date(timeIntervalSince1970: 1234567890)
+			$0.uuid = .incrementing
+		}
+		
+		store.exhaustivity = .off
+		
+		await store.send(.path(.element(id: 1, action: .recordMeeting(.onTask))))
+		await store.skipReceivedActions()
+		
+		store.assert {
+			$0.path[id: 0, case: /AppFeature.Path.State.detail]?
+				.standup.meetings = [
+					Meeting(
+						id: UUID(0),
+						date: Date(timeIntervalSince1970: 1234567890),
+						transcript: "This was a really good meeting!"
 					)
 				]
 			XCTAssertEqual($0.path.count, 1)

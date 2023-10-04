@@ -19,6 +19,7 @@ struct StandupDetailFeature: Reducer {
 			case standupUpdate(Standup)
 			case deleteStandup(id: Standup.ID)
 			case recordMeeting(Standup)
+			case showMeeting(Meeting, standup: Standup)
 		}
 		
 		enum Alert {
@@ -32,6 +33,7 @@ struct StandupDetailFeature: Reducer {
 		case cancelStandupButtonTapped
 		case delegate(Delegate)
 		case destination(PresentationAction<Destination.Action>)
+		case meetingTapped(Meeting)
 	}
 	
 	struct Destination: Reducer {
@@ -101,6 +103,11 @@ struct StandupDetailFeature: Reducer {
 				
 			case .delegate:
 				return .none
+				
+			case let .meetingTapped(meeting):
+				return .run { [standup = state.standup] send in
+					await send(.delegate(.showMeeting(meeting, standup: standup)))
+				}
 			}
 		}
 		.ifLet(\.$destination, action: /Action.destination) {
