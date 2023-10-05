@@ -57,9 +57,11 @@ struct StandupListView: View {
 		NavigationStack {
 			StandupListView(
 				store: Store(
-					initialState: StandupsListFeature.State(standups: [.mock])
+					initialState: StandupsListFeature.State()
 				) {
 				  StandupsListFeature()
+				} withDependencies: {
+					$0.dataManager = .mock(initialData: try? JSONEncoder().encode([Standup.mock]))
 				}
 			)
 		}

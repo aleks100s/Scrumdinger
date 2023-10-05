@@ -54,11 +54,13 @@ struct AppView: View {
 		store: Store(
 			initialState: AppFeature.State(
 				standupsListState: StandupsListFeature.State(
-					standups: [.mock]
+					// standups: [.mock]
 				)
 			)
 		) {
 			AppFeature()
+		} withDependencies: {
+			$0.dataManager = .mock(initialData: try? JSONEncoder().encode([Standup.mock]))
 		}
 	)
 }
@@ -76,11 +78,13 @@ struct AppView: View {
 					]
 				),
 				standupsListState: StandupsListFeature.State(
-					standups: [standup]
+					// standups: [standup]
 				)
 			)
 		) {
 			AppFeature()
+		} withDependencies: {
+			$0.dataManager = .mock(initialData: try? JSONEncoder().encode([Standup.mock]))
 		}
 	)
 }

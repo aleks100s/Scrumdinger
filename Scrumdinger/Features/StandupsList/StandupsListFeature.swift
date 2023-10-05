@@ -5,6 +5,17 @@ struct StandupsListFeature: Reducer {
 	struct State: Equatable {
 		@PresentationState var addStandup: StandupFormFeature.State?
 		var standups: IdentifiedArrayOf<Standup> = []
+		
+		init(addStandup: StandupFormFeature.State? = nil) {
+			@Dependency(\.dataManager.load) var loadData
+			
+			self.addStandup = addStandup
+			do {
+				self.standups = try JSONDecoder().decode(IdentifiedArrayOf<Standup>.self, from: loadData(.standups))
+			} catch {
+				self.standups = []
+			}
+		}
 	}
 	
 	enum Action: Equatable {

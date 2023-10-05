@@ -44,6 +44,17 @@
                ReferencedContainer = "container:Scrumdinger.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "271DE1702ACF362400A5C44B"
+               BuildableName = "ScrumdingerUITests.xctest"
+               BlueprintName = "ScrumdingerUITests"
+               ReferencedContainer = "container:Scrumdinger.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

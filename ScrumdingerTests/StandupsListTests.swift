@@ -9,6 +9,7 @@ final class StandupsListTests: XCTestCase {
 			StandupsListFeature()
 		} withDependencies: {
 			$0.uuid = .incrementing
+			$0.dataManager = .mock()
 		}
 		var standup = Standup(id: UUID(0), attendees: [Attendee(id: UUID(1))])
 		await store.send(.addButtonTapped) {
@@ -31,6 +32,7 @@ final class StandupsListTests: XCTestCase {
 			StandupsListFeature()
 		} withDependencies: {
 			$0.uuid = .incrementing
+			$0.dataManager = .mock()
 		}
 		store.exhaustivity = .off
 		var standup = Standup(id: UUID(0), attendees: [Attendee(id: UUID(1))])

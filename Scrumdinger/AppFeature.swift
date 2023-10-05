@@ -44,6 +44,8 @@ struct AppFeature: Reducer {
 	
 	@Dependency(\.uuid) var uuid
 	@Dependency(\.date.now) var date
+	@Dependency(\.continuousClock) var clock
+	@Dependency(\.dataManager.save) var saveData
 	
 	var body: some ReducerOf<Self> {
 		Scope(state: \.standupsListState, action: /Action.standupsList) {
@@ -100,6 +102,20 @@ struct AppFeature: Reducer {
 		}
 		.forEach(\.path, action: /Action.path) {
 			Path()
+		}
+		
+		Reduce { state, _ in
+				.run { [standups = state.standupsListState.standups] _ in
+				enum CancelID {
+					case saveDebounce
+				}
+				
+				try await withTaskCancellation(id: CancelID.saveDebounce, cancelInFlight: true) {
+					try await self.clock.sleep(for: .seconds(1))
+					try self.saveData(JSONEncoder().encode(standups), .standups)
+					
+				}
+			}
 		}
 	}
 }
