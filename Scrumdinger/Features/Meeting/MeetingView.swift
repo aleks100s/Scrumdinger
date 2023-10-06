@@ -1,10 +1,3 @@
-//
-//  MeetingView.swift
-//  Scrumdinger
-//
-//  Created by Alexander on 04.10.2023.
-//
-
 import SwiftUI
 import Domain
 

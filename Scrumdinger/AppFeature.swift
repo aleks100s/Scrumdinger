@@ -1,13 +1,7 @@
-//
-//  AppFeature.swift
-//  Scrumdinger
-//
-//  Created by Alexander on 29.09.2023.
-//
-
 import Foundation
 import ComposableArchitecture
 import Domain
+import DataManagerImpl
 
 struct AppFeature: Reducer {
 	struct State: Equatable {

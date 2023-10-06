@@ -1,5 +1,7 @@
 import Domain
 import SpeechClient
+import DataManager
+import DataManagerImpl
 import ComposableArchitecture
 import XCTest
 @testable import Scrumdinger

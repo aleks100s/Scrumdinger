@@ -1,10 +1,3 @@
-//
-//  StandupDetailFeature.swift
-//  Scrumdinger
-//
-//  Created by Alexander on 27.09.2023.
-//
-
 import Foundation
 import Domain
 import ComposableArchitecture

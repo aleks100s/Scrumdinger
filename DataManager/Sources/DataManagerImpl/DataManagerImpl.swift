@@ -1,29 +1,18 @@
-//
-//  DataManager.swift
-//  Scrumdinger
-//
-//  Created by Alexander on 05.10.2023.
-//
-
 import Foundation
+import DataManager
 import ComposableArchitecture
 
-struct DataManager {
-	var load: @Sendable (URL) throws -> Data
-	var save: @Sendable (Data, URL) throws -> Void
-}
-
 extension DataManager: DependencyKey {
-	static let liveValue = Self(
+	public static let liveValue = Self(
 		load: { try Data(contentsOf: $0) },
 		save: { data, url in
 			try data.write(to: url)
 		}
 	)
 	
-	static let previewValue = mock()
+	public static let previewValue = mock()
 	
-	static let failToRead = Self(
+	public static let failToRead = Self(
 		load: { _ in
 			Data()
 		},
@@ -34,7 +23,7 @@ extension DataManager: DependencyKey {
 		}
 	)
 	
-	static let failToWrite = Self(
+	public static let failToWrite = Self(
 		load: { _ in
 			struct SomeError: Error {}
 			
@@ -43,7 +32,7 @@ extension DataManager: DependencyKey {
 		save: { _, _ in }
 	)
 	
-	static func mock(initialData: Data? = nil) -> Self {
+	public static func mock(initialData: Data? = nil) -> Self {
 		let data = LockIsolated(initialData)
 		return Self(
 			load: { _ in
@@ -59,9 +48,3 @@ extension DataManager: DependencyKey {
 	}
 }
 
-extension DependencyValues {
-	var dataManager: DataManager {
-		get { self[DataManager.self] }
-		set { self[DataManager.self] = newValue }
-	}
-}

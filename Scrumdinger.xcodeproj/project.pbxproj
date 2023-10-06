@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		271DE1672ACDCA2B00A5C44B /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE1662ACDCA2B00A5C44B /* MeetingView.swift */; };
 		271DE1692ACF2CDD00A5C44B /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE1682ACF2CDD00A5C44B /* URL+.swift */; };
-		271DE16C2ACF304900A5C44B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE16B2ACF304900A5C44B /* DataManager.swift */; };
 		271DE1742ACF362400A5C44B /* ScrumdingerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE1732ACF362400A5C44B /* ScrumdingerUITests.swift */; };
 		274748772AC37EDC00F1D9F6 /* StandupFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274748762AC37EDC00F1D9F6 /* StandupFormTests.swift */; };
 		2747487B2AC4C55B00F1D9F6 /* StandupsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747487A2AC4C55B00F1D9F6 /* StandupsListTests.swift */; };
@@ -26,11 +25,17 @@
 		276A76512AC831440047D5F3 /* SpeakerArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76502AC831440047D5F3 /* SpeakerArc.swift */; };
 		276A76532AC831570047D5F3 /* MeetingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76522AC831570047D5F3 /* MeetingFooterView.swift */; };
 		276A76592ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76582ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift */; };
+		27774E6E2AD022FA00009576 /* DataManager in Frameworks */ = {isa = PBXBuildFile; productRef = 27774E6D2AD022FA00009576 /* DataManager */; };
+		27774E702AD022FE00009576 /* DataManagerImpl in Frameworks */ = {isa = PBXBuildFile; productRef = 27774E6F2AD022FE00009576 /* DataManagerImpl */; };
+		27774E722AD0230800009576 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 27774E712AD0230800009576 /* ComposableArchitecture */; };
+		2793D5F72AD01DC900BC3B66 /* DataManager in Frameworks */ = {isa = PBXBuildFile; productRef = 2793D5F62AD01DC900BC3B66 /* DataManager */; };
+		2793D5FB2AD01E1900BC3B66 /* DependencyValues+DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793D5FA2AD01E1900BC3B66 /* DependencyValues+DataManager.swift */; };
+		2793D5FF2AD0223200BC3B66 /* SpeechClientImpl in Frameworks */ = {isa = PBXBuildFile; productRef = 2793D5FE2AD0223200BC3B66 /* SpeechClientImpl */; };
+		2793D6012AD0226200BC3B66 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 2793D6002AD0226200BC3B66 /* ComposableArchitecture */; };
 		27B8E2712AC36A960006BA72 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2702AC36A960006BA72 /* ScrumdingerApp.swift */; };
 		27B8E2732AC36A960006BA72 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2722AC36A960006BA72 /* AppView.swift */; };
 		27B8E2752AC36A970006BA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B8E2742AC36A970006BA72 /* Assets.xcassets */; };
 		27B8E2782AC36A970006BA72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B8E2772AC36A970006BA72 /* Preview Assets.xcassets */; };
-		27B8E2802AC36BC70006BA72 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 27B8E27F2AC36BC70006BA72 /* ComposableArchitecture */; };
 		27B8E2822AC36BD00006BA72 /* StandupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2812AC36BD00006BA72 /* StandupListView.swift */; };
 		27B8E2872AC36CD80006BA72 /* StandupsListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2862AC36CD80006BA72 /* StandupsListFeature.swift */; };
 		27B8E2892AC36E500006BA72 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2882AC36E500006BA72 /* CardView.swift */; };
@@ -45,7 +50,8 @@
 		27D55DF02ACFCCBA003DB63A /* Mock in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DEF2ACFCCBA003DB63A /* Mock */; };
 		27D55DF32ACFD096003DB63A /* SpeechClient in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DF22ACFD096003DB63A /* SpeechClient */; };
 		27D55DF72ACFD388003DB63A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DF62ACFD388003DB63A /* Domain */; };
-		27D55DF92ACFD38F003DB63A /* SpeechClient in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DF82ACFD38F003DB63A /* SpeechClient */; };
+		27FE20262AD0243400A1FC49 /* SpeechClient in Frameworks */ = {isa = PBXBuildFile; productRef = 27FE20252AD0243400A1FC49 /* SpeechClient */; };
+		27FE20282AD024A600A1FC49 /* DataManagerImpl in Frameworks */ = {isa = PBXBuildFile; productRef = 27FE20272AD024A600A1FC49 /* DataManagerImpl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +74,6 @@
 /* Begin PBXFileReference section */
 		271DE1662ACDCA2B00A5C44B /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		271DE1682ACF2CDD00A5C44B /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
-		271DE16B2ACF304900A5C44B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		271DE1712ACF362400A5C44B /* ScrumdingerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrumdingerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271DE1732ACF362400A5C44B /* ScrumdingerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerUITests.swift; sourceTree = "<group>"; };
 		271DE17C2ACFC95600A5C44B /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
@@ -91,6 +96,8 @@
 		276A76552AC8AF380047D5F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		276A76562AC8B0430047D5F3 /* Scrumdinger.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Scrumdinger.xctestplan; sourceTree = "<group>"; };
 		276A76582ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+SpeechClient.swift"; sourceTree = "<group>"; };
+		2793D5F52AD01D4300BC3B66 /* DataManager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataManager; sourceTree = "<group>"; };
+		2793D5FA2AD01E1900BC3B66 /* DependencyValues+DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+DataManager.swift"; sourceTree = "<group>"; };
 		27B8E26D2AC36A960006BA72 /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B8E2702AC36A960006BA72 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		27B8E2722AC36A960006BA72 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -120,8 +127,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27FE20262AD0243400A1FC49 /* SpeechClient in Frameworks */,
+				27774E722AD0230800009576 /* ComposableArchitecture in Frameworks */,
+				2793D5F72AD01DC900BC3B66 /* DataManager in Frameworks */,
 				27D55DF72ACFD388003DB63A /* Domain in Frameworks */,
-				27D55DF92ACFD38F003DB63A /* SpeechClient in Frameworks */,
+				27FE20282AD024A600A1FC49 /* DataManagerImpl in Frameworks */,
 				27D55DEE2ACFCCB0003DB63A /* Mock in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,9 +141,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				27D55DF02ACFCCBA003DB63A /* Mock in Frameworks */,
+				2793D6012AD0226200BC3B66 /* ComposableArchitecture in Frameworks */,
+				27774E6E2AD022FA00009576 /* DataManager in Frameworks */,
 				27D55DE22ACFCAC6003DB63A /* Domain in Frameworks */,
-				27B8E2802AC36BC70006BA72 /* ComposableArchitecture in Frameworks */,
+				2793D5FF2AD0223200BC3B66 /* SpeechClientImpl in Frameworks */,
 				27D55DF32ACFD096003DB63A /* SpeechClient in Frameworks */,
+				27774E702AD022FE00009576 /* DataManagerImpl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,14 +159,6 @@
 				271DE1662ACDCA2B00A5C44B /* MeetingView.swift */,
 			);
 			path = Meeting;
-			sourceTree = "<group>";
-		};
-		271DE16A2ACF304200A5C44B /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				271DE16B2ACF304900A5C44B /* DataManager.swift */,
-			);
-			path = DataManager;
 			sourceTree = "<group>";
 		};
 		271DE1722ACF362400A5C44B /* ScrumdingerUITests */ = {
@@ -235,16 +240,10 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		276A76572ACC8DB90047D5F3 /* Speech */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Speech;
-			sourceTree = "<group>";
-		};
 		27B8E2642AC36A960006BA72 = {
 			isa = PBXGroup;
 			children = (
+				2793D5F52AD01D4300BC3B66 /* DataManager */,
 				27D55DF12ACFCFE7003DB63A /* SpeechClient */,
 				271DE17C2ACFC95600A5C44B /* Domain */,
 				27B8E26F2AC36A960006BA72 /* Scrumdinger */,
@@ -268,8 +267,6 @@
 		27B8E26F2AC36A960006BA72 /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
-				271DE16A2ACF304200A5C44B /* DataManager */,
-				276A76572ACC8DB90047D5F3 /* Speech */,
 				276A76552AC8AF380047D5F3 /* Info.plist */,
 				2747487C2AC4C97A00F1D9F6 /* Features */,
 				27B8E28D2AC36FA90006BA72 /* Library */,
@@ -331,10 +328,11 @@
 		27B8E2952AC3754C0006BA72 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2793D5FA2AD01E1900BC3B66 /* DependencyValues+DataManager.swift */,
 				276A76582ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift */,
 				27D55DEB2ACFCC71003DB63A /* Duration+.swift */,
-				271DE1682ACF2CDD00A5C44B /* URL+.swift */,
 				27D55DE72ACFCB9C003DB63A /* Theme+.swift */,
+				271DE1682ACF2CDD00A5C44B /* URL+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -384,7 +382,10 @@
 			packageProductDependencies = (
 				27D55DED2ACFCCB0003DB63A /* Mock */,
 				27D55DF62ACFD388003DB63A /* Domain */,
-				27D55DF82ACFD38F003DB63A /* SpeechClient */,
+				2793D5F62AD01DC900BC3B66 /* DataManager */,
+				27774E712AD0230800009576 /* ComposableArchitecture */,
+				27FE20252AD0243400A1FC49 /* SpeechClient */,
+				27FE20272AD024A600A1FC49 /* DataManagerImpl */,
 			);
 			productName = ScrumdingerTests;
 			productReference = 2747486D2AC37EC400F1D9F6 /* ScrumdingerTests.xctest */;
@@ -404,10 +405,13 @@
 			);
 			name = Scrumdinger;
 			packageProductDependencies = (
-				27B8E27F2AC36BC70006BA72 /* ComposableArchitecture */,
 				27D55DE12ACFCAC6003DB63A /* Domain */,
 				27D55DEF2ACFCCBA003DB63A /* Mock */,
 				27D55DF22ACFD096003DB63A /* SpeechClient */,
+				2793D5FE2AD0223200BC3B66 /* SpeechClientImpl */,
+				2793D6002AD0226200BC3B66 /* ComposableArchitecture */,
+				27774E6D2AD022FA00009576 /* DataManager */,
+				27774E6F2AD022FE00009576 /* DataManagerImpl */,
 			);
 			productName = Scrumdinger;
 			productReference = 27B8E26D2AC36A960006BA72 /* Scrumdinger.app */;
@@ -522,6 +526,7 @@
 				27D55DE82ACFCB9C003DB63A /* Theme+.swift in Sources */,
 				276A76482AC830860047D5F3 /* RecordMeetingFeature.swift in Sources */,
 				276A76512AC831440047D5F3 /* SpeakerArc.swift in Sources */,
+				2793D5FB2AD01E1900BC3B66 /* DependencyValues+DataManager.swift in Sources */,
 				271DE1672ACDCA2B00A5C44B /* MeetingView.swift in Sources */,
 				2747487F2AC4C99200F1D9F6 /* StandupDetailView.swift in Sources */,
 				27D55DEC2ACFCC71003DB63A /* Duration+.swift in Sources */,
@@ -530,7 +535,6 @@
 				276A76532AC831570047D5F3 /* MeetingFooterView.swift in Sources */,
 				271DE1692ACF2CDD00A5C44B /* URL+.swift in Sources */,
 				27B8E2942AC370760006BA72 /* StandupFormFeature.swift in Sources */,
-				271DE16C2ACF304900A5C44B /* DataManager.swift in Sources */,
 				276A761F2AC707EB0047D5F3 /* AppFeature.swift in Sources */,
 				276A76592ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift in Sources */,
 				27B8E2902AC36FC10006BA72 /* StandupFormView.swift in Sources */,
@@ -861,7 +865,28 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		27B8E27F2AC36BC70006BA72 /* ComposableArchitecture */ = {
+		27774E6D2AD022FA00009576 /* DataManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataManager;
+		};
+		27774E6F2AD022FE00009576 /* DataManagerImpl */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataManagerImpl;
+		};
+		27774E712AD0230800009576 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27B8E27E2AC36BC70006BA72 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		2793D5F62AD01DC900BC3B66 /* DataManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataManager;
+		};
+		2793D5FE2AD0223200BC3B66 /* SpeechClientImpl */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpeechClientImpl;
+		};
+		2793D6002AD0226200BC3B66 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 27B8E27E2AC36BC70006BA72 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
@@ -886,9 +911,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
 		};
-		27D55DF82ACFD38F003DB63A /* SpeechClient */ = {
+		27FE20252AD0243400A1FC49 /* SpeechClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SpeechClient;
+		};
+		27FE20272AD024A600A1FC49 /* DataManagerImpl */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataManagerImpl;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

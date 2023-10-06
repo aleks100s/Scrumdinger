@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Scrumdinger
-//
-//  Created by Alexander on 26.09.2023.
-//
-
 import SwiftUI
 import ComposableArchitecture
 
@@ -51,14 +44,13 @@ struct AppView: View {
 
 import Mock
 import Domain
+import DataManagerImpl
 
 #Preview("Regular") {
 	return AppView(
 		store: Store(
 			initialState: AppFeature.State(
-				standupsListState: StandupsListFeature.State(
-					// standups: [.mock]
-				)
+				standupsListState: StandupsListFeature.State()
 			)
 		) {
 			AppFeature()

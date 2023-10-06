@@ -1,12 +1,6 @@
-//
-//  SpeechClient.swift
-//  Scrumdinger
-//
-//  Created by Alexander on 03.10.2023.
-//
-
 import Dependencies
 import SpeechClient
+import SpeechClientImpl
 
 extension DependencyValues {
 	var speechClient: SpeechClient {

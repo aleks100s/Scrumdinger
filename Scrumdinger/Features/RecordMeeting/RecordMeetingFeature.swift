@@ -1,10 +1,3 @@
-//
-//  RecordMeetingfeature.swift
-//  Scrumdinger
-//
-//  Created by Alexander on 30.09.2023.
-//
-
 import ComposableArchitecture
 import Foundation
 import Domain
