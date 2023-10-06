@@ -1,4 +1,5 @@
 import Domain
+import SpeechClient
 import ComposableArchitecture
 import XCTest
 @testable import Scrumdinger

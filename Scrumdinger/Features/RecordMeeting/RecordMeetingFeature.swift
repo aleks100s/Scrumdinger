@@ -7,8 +7,8 @@
 
 import ComposableArchitecture
 import Foundation
-import Speech
 import Domain
+import SpeechClient
 
 struct RecordMeetingFeature: Reducer {
 	struct State: Equatable {

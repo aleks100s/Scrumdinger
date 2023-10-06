@@ -57,13 +57,14 @@ struct RecordMeetingView: View {
 	}
 }
 
+import Domain
 import Mock
 
 #Preview {
   MainActor.assumeIsolated {
 	NavigationStack {
 	  RecordMeetingView(
-		store: Store(initialState: RecordMeetingFeature.State(standup: .mock)) {
+		store: Store(initialState: RecordMeetingFeature.State(standup: Standup.mock)) {
 			RecordMeetingFeature()
 		}
 	  )

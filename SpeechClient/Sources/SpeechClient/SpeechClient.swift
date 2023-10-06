@@ -1,20 +1,21 @@
-//
-//  SpeechClient.swift
-//  Scrumdinger
-//
-//  Created by Alexander on 03.10.2023.
-//
+import Speech
+import ComposableArchitecture
 
-@preconcurrency import Speech
-import Dependencies
-
-struct SpeechClient {
-	var requestAuthorization: @Sendable () async -> SFSpeechRecognizerAuthorizationStatus
-	var start: @Sendable () -> AsyncThrowingStream<String, Error>
+public struct SpeechClient {
+	public var requestAuthorization: @Sendable () async -> SFSpeechRecognizerAuthorizationStatus
+	public var start: @Sendable () -> AsyncThrowingStream<String, Error>
+	
+	public init(
+		requestAuthorization: @Sendable @escaping () async -> SFSpeechRecognizerAuthorizationStatus,
+		start: @Sendable @escaping () -> AsyncThrowingStream<String, Error>
+	) {
+		self.requestAuthorization = requestAuthorization
+		self.start = start
+	}
 }
 
 extension SpeechClient: DependencyKey {
-	static let liveValue = SpeechClient(
+	public static let liveValue = SpeechClient(
 		requestAuthorization: {
 			await withUnsafeContinuation { continuation in
 				SFSpeechRecognizer.requestAuthorization { status in
@@ -84,7 +85,7 @@ extension SpeechClient: DependencyKey {
 		}
 	)
 	
-	static let previewValue = SpeechClient(
+	public static let previewValue = SpeechClient(
 		requestAuthorization: { .authorized },
 		start: {
 			AsyncThrowingStream { continuation in
@@ -120,11 +121,4 @@ extension SpeechClient: DependencyKey {
 			}
 		}
 	)
-}
-
-extension DependencyValues {
-	var speechClient: SpeechClient {
-		get { self[SpeechClient.self] }
-		set { self[SpeechClient.self] = newValue }
-	}
 }
