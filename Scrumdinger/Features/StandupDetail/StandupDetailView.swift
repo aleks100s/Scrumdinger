@@ -116,6 +116,8 @@ struct StandupDetailView: View {
 	}
 }
 
+import Mock
+
 #Preview {
 	NavigationStack {
 		StandupDetailView(

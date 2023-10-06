@@ -6,20 +6,22 @@
 //
 
 import SwiftUI
+import Domain
 
 struct MeetingProgressViewStyle: ProgressViewStyle {
-	var theme: Theme
+	let mainColor: Color
+	let accentColor: Color
 	
 	func makeBody(
 		configuration: Configuration
 	) -> some View {
 		ZStack {
 			RoundedRectangle(cornerRadius: 10)
-				.fill(self.theme.accentColor)
+				.fill(accentColor)
 				.frame(height: 20)
 			
 			ProgressView(configuration)
-				.tint(self.theme.mainColor)
+				.tint(mainColor)
 				.frame(height: 12)
 				.padding(.horizontal)
 		}

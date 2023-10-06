@@ -49,6 +49,9 @@ struct AppView: View {
     }
 }
 
+import Mock
+import Domain
+
 #Preview("Regular") {
 	return AppView(
 		store: Store(

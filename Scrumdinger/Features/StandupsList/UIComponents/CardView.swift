@@ -1,4 +1,5 @@
 import SwiftUI
+import Domain
 
 struct CardView: View {
 	let standup: Standup

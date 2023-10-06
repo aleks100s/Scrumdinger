@@ -1,10 +1,4 @@
-//
-//  AppTests.swift
-//  ScrumdingerTests
-//
-//  Created by Alexander on 29.09.2023.
-//
-
+import Domain
 import ComposableArchitecture
 import XCTest
 @testable import Scrumdinger

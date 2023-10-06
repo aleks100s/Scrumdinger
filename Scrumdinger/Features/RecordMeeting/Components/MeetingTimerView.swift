@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Domain
 
 struct MeetingTimerView: View {
 	let standup: Standup

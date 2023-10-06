@@ -1,10 +1,4 @@
-//
-//  StandupDetailTests.swift
-//  ScrumdingerTests
-//
-//  Created by Alexander on 28.09.2023.
-//
-
+import Domain
 import XCTest
 import ComposableArchitecture
 @testable import Scrumdinger

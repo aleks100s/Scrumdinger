@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Domain
 
 struct MeetingView: View {
 	let meeting: Meeting

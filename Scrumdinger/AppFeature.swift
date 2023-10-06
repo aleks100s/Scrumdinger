@@ -7,6 +7,7 @@
 
 import Foundation
 import ComposableArchitecture
+import Domain
 
 struct AppFeature: Reducer {
 	struct State: Equatable {

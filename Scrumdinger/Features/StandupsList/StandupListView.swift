@@ -52,6 +52,9 @@ struct StandupListView: View {
 	}
 }
 
+import Domain
+import Mock
+
 #Preview {
 	MainActor.assumeIsolated {
 		NavigationStack {

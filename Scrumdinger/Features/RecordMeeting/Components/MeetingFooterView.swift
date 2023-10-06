@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Domain
 
 struct MeetingFooterView: View {
 	let standup: Standup

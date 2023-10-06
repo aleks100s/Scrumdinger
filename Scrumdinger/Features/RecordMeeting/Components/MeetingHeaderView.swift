@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Domain
 
 struct MeetingHeaderView: View {
 	let secondsElapsed: Int
@@ -16,7 +17,7 @@ struct MeetingHeaderView: View {
 		VStack {
 			ProgressView(value: self.progress)
 				.progressViewStyle(
-					MeetingProgressViewStyle(theme: self.theme)
+					MeetingProgressViewStyle(mainColor: theme.mainColor, accentColor: theme.accentColor)
 				)
 			HStack {
 				VStack(alignment: .leading) {

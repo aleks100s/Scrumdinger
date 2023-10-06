@@ -1,4 +1,5 @@
 import SwiftUI
+import Domain
 
 struct ThemePicker: View {
 	@Binding var selection: Theme
