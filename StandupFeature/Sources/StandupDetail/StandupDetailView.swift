@@ -1,10 +1,15 @@
 import SwiftUI
 import ComposableArchitecture
+import StandupForm
 
-struct StandupDetailView: View {
+public struct StandupDetailView: View {
 	let store: StoreOf<StandupDetailFeature>
 	
-	var body: some View {
+	public init(store: StoreOf<StandupDetailFeature>) {
+		self.store = store
+	}
+	
+	public var body: some View {
 		WithViewStore(store, observe: { $0 }) { viewStore in
 			List {
 				Section {

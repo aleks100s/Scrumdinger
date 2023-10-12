@@ -3,6 +3,8 @@ import ComposableArchitecture
 import Domain
 import DataManager
 import RecordMeeting
+import StandupDetail
+import StandupsList
 
 struct AppFeature: Reducer {
 	struct State: Equatable {
@@ -109,7 +111,6 @@ struct AppFeature: Reducer {
 				try await withTaskCancellation(id: CancelID.saveDebounce, cancelInFlight: true) {
 					try await self.clock.sleep(for: .seconds(1))
 					try self.saveData(JSONEncoder().encode(standups), .standups)
-					
 				}
 			}
 		}

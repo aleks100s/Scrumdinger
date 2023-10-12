@@ -4,39 +4,64 @@
 import PackageDescription
 
 let package = Package(
-    name: "MeetingFeature",
+    name: "StandupFeature",
 	platforms: [.iOS(.v17)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "MeetingFeature",
+            name: "StandupFeature",
             targets: [
-				"Meeting",
-				"RecordMeeting"
+				"StandupForm",
+				"StandupDetail",
+				"StandupsList"
 			]
 		),
     ],
 	dependencies: [
 		.package(name: "Domain", path: "./Domain"),
-		.package(name: "SpeechClient", path: "./SpeechClient"),
 		.package(name: "Shared", path: "./Shared"),
+		.package(name: "DataManager", path: "./DataManager"),
 		.package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", "1.2.0" ..< "2.0.0")
 	],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-			name: "Meeting",
-			dependencies: ["Domain"]
-		),
 		.target(
-			name: "RecordMeeting",
+			name: "StandupForm",
 			dependencies: [
 				"Domain",
-				"SpeechClient",
 				"Shared",
 				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
 			]
-		)
+		),
+		.target(
+			name: "StandupDetail",
+			dependencies: [
+				"Domain",
+				"StandupForm",
+				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+			]
+		),
+		.target(
+			name: "StandupsList",
+			dependencies: [
+				"Domain",
+				"Shared",
+				"DataManager",
+				"StandupForm",
+				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+			]
+		),
+        .testTarget(
+            name: "StandupFeatureTests",
+            dependencies: [
+				"StandupDetail",
+				"StandupForm",
+				"StandupsList",
+				"Domain",
+				"Shared",
+				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+			]
+		),
     ]
 )

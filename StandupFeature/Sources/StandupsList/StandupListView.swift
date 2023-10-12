@@ -1,10 +1,16 @@
 import SwiftUI
 import ComposableArchitecture
+import StandupForm
+import Mock
 
-struct StandupListView: View {
+public struct StandupListView: View {
 	let store: StoreOf<StandupsListFeature>
 	
-	var body: some View {
+	public init(store: StoreOf<StandupsListFeature>) {
+		self.store = store
+	}
+	
+	public var body: some View {
 		WithViewStore(self.store, observe: \.standups) { viewStore in
 			List {
 				ForEach(viewStore.state) { standup in

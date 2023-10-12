@@ -1,7 +1,7 @@
 import Domain
 import XCTest
 import ComposableArchitecture
-@testable import Scrumdinger
+import StandupDetail
 
 @MainActor
 final class StandupDetailTests: XCTestCase {

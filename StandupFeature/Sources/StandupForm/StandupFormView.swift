@@ -2,11 +2,15 @@ import SwiftUI
 import ComposableArchitecture
 import Extensions
 
-struct StandupFormView: View {
+public struct StandupFormView: View {
 	let store: StoreOf<StandupFormFeature>
 	@FocusState var focus: StandupFormFeature.State.Field?
 	
-	var body: some View {
+	public init(store: StoreOf<StandupFormFeature>) {
+		self.store = store
+	}
+	
+	public var body: some View {
 		WithViewStore(self.store, observe: { $0 }) { viewStore in
 			Form {
 				Section {

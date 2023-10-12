@@ -2,13 +2,15 @@ import ComposableArchitecture
 import Foundation
 import Domain
 import Extensions
+import StandupForm
+import DataManager
 
-struct StandupsListFeature: Reducer {
-	struct State: Equatable {
-		@PresentationState var addStandup: StandupFormFeature.State?
-		var standups: IdentifiedArrayOf<Standup> = []
+public struct StandupsListFeature: Reducer {
+	public struct State: Equatable {
+		@PresentationState public var addStandup: StandupFormFeature.State?
+		public var standups: IdentifiedArrayOf<Standup> = []
 		
-		init(addStandup: StandupFormFeature.State? = nil) {
+		public init(addStandup: StandupFormFeature.State? = nil) {
 			@Dependency(\.dataManager.load) var loadData
 			
 			self.addStandup = addStandup
@@ -20,7 +22,7 @@ struct StandupsListFeature: Reducer {
 		}
 	}
 	
-	enum Action: Equatable {
+	public enum Action: Equatable {
 		case addButtonTapped
 		case addStandup(PresentationAction<StandupFormFeature.Action>)
 		case cancelStandupButtonTapped
@@ -30,7 +32,7 @@ struct StandupsListFeature: Reducer {
 	
 	@Dependency(\.uuid) var uuid
 	
-	var body: some ReducerOf<Self> {
+	public var body: some ReducerOf<Self> {
 		Reduce { state, action in
 			switch action {
 			case .addButtonTapped:
@@ -59,4 +61,6 @@ struct StandupsListFeature: Reducer {
 			StandupFormFeature()
 		}
 	}
+	
+	public init() {}
 }

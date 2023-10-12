@@ -2,6 +2,9 @@ import SwiftUI
 import ComposableArchitecture
 import Meeting
 import RecordMeeting
+import StandupDetail
+import StandupForm
+import StandupsList
 
 struct AppView: View {
 	let store: StoreOf<AppFeature>

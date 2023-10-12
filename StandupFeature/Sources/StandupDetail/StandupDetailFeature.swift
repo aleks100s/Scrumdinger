@@ -1,22 +1,27 @@
 import Foundation
 import Domain
 import ComposableArchitecture
+import StandupForm
 
-struct StandupDetailFeature: Reducer {
-	struct State: Equatable {
+public struct StandupDetailFeature: Reducer {
+	public struct State: Equatable {
 		@PresentationState var destination: Destination.State?
-		var standup: Standup
+		public var standup: Standup
+		
+		public init(standup: Standup) {
+			self.standup = standup
+		}
 	}
 	
-	enum Action: Equatable {
-		enum Delegate: Equatable {
+	public enum Action: Equatable {
+		public enum Delegate: Equatable {
 			case standupUpdate(Standup)
 			case deleteStandup(id: Standup.ID)
 			case recordMeeting(Standup)
 			case showMeeting(Meeting, standup: Standup)
 		}
 		
-		enum Alert {
+		public enum Alert {
 			case confirmDeletion
 		}
 		
@@ -30,21 +35,21 @@ struct StandupDetailFeature: Reducer {
 		case meetingTapped(Meeting)
 	}
 	
-	struct Destination: Reducer {
-		enum State: Equatable {
+	public struct Destination: Reducer {
+		public enum State: Equatable {
 			case alert(AlertState<Action.Alert>)
 			case editStandup(StandupFormFeature.State)
 		}
 		
-		enum Action: Equatable {
-			enum Alert {
+		public enum Action: Equatable {
+			public enum Alert {
 				case confirmDeletion
 			}
 			case alert(Alert)
 			case editStandup(StandupFormFeature.Action)
 		}
 		
-		var body: some ReducerOf<Self> {
+		public var body: some ReducerOf<Self> {
 			Scope(state: /State.editStandup, action: /Action.editStandup) {
 				StandupFormFeature()
 			}
@@ -53,7 +58,7 @@ struct StandupDetailFeature: Reducer {
 	
 	@Dependency(\.dismiss) var dismiss
 	
-	var body: some ReducerOf<Self> {
+	public var body: some ReducerOf<Self> {
 		Reduce { state, action in
 			switch action {
 			case .destination(.presented(.alert(.confirmDeletion))):
@@ -113,4 +118,6 @@ struct StandupDetailFeature: Reducer {
 			}
 		}
 	}
+	
+	public init() {}
 }

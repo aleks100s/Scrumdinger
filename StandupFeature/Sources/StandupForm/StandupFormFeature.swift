@@ -2,17 +2,17 @@ import ComposableArchitecture
 import Foundation
 import Domain
 
-struct StandupFormFeature: Reducer {
-	struct State: Equatable {
-		enum Field: Hashable {
+public struct StandupFormFeature: Reducer {
+	public struct State: Equatable {
+		public enum Field: Hashable {
 			case attendee(Attendee.ID)
 			case title
 		}
 		
-		@BindingState var standup: Standup
-		@BindingState var focus: Field?
+		@BindingState public var standup: Standup
+		@BindingState public var focus: Field?
 		
-		init(standup: Standup, focus: Field? = .title) {
+		public init(standup: Standup, focus: Field? = .title) {
 			self.standup = standup
 			self.focus = focus
 			if self.standup.attendees.isEmpty {
@@ -22,7 +22,7 @@ struct StandupFormFeature: Reducer {
 		}
 	}
 	
-	enum Action: BindableAction, Equatable {
+	public enum Action: BindableAction, Equatable {
 		case addAttendeeButtonTapped
 		case deleteAttendees(atOffsets: IndexSet)
 		case binding(BindingAction<State>)
@@ -30,7 +30,7 @@ struct StandupFormFeature: Reducer {
 	
 	@Dependency(\.uuid) var uuid
 	
-	var body: some ReducerOf<Self> {
+	public var body: some ReducerOf<Self> {
 		BindingReducer()
 		Reduce { state, action in
 			switch action {
@@ -56,4 +56,6 @@ struct StandupFormFeature: Reducer {
 			}
 		}
 	}
+	
+	public init() {}
 }

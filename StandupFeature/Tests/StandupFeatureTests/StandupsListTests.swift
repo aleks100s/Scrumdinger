@@ -2,7 +2,8 @@ import Domain
 import XCTest
 import DataManager
 import ComposableArchitecture
-@testable import Scrumdinger
+import StandupForm
+import StandupsList
 
 @MainActor
 final class StandupsListTests: XCTestCase {
