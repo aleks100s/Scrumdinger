@@ -1,7 +1,7 @@
 import Foundation
 import ComposableArchitecture
 import Domain
-import DataManagerImpl
+import DataManager
 import RecordMeeting
 
 struct AppFeature: Reducer {

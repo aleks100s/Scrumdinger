@@ -16,10 +16,8 @@
 		276A761F2AC707EB0047D5F3 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A761E2AC707EB0047D5F3 /* AppFeature.swift */; };
 		276A76212AC7581E0047D5F3 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76202AC7581E0047D5F3 /* AppTests.swift */; };
 		27774E6E2AD022FA00009576 /* DataManager in Frameworks */ = {isa = PBXBuildFile; productRef = 27774E6D2AD022FA00009576 /* DataManager */; };
-		27774E702AD022FE00009576 /* DataManagerImpl in Frameworks */ = {isa = PBXBuildFile; productRef = 27774E6F2AD022FE00009576 /* DataManagerImpl */; };
 		27774E722AD0230800009576 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 27774E712AD0230800009576 /* ComposableArchitecture */; };
 		2793D5F72AD01DC900BC3B66 /* DataManager in Frameworks */ = {isa = PBXBuildFile; productRef = 2793D5F62AD01DC900BC3B66 /* DataManager */; };
-		2793D5FF2AD0223200BC3B66 /* SpeechClientImpl in Frameworks */ = {isa = PBXBuildFile; productRef = 2793D5FE2AD0223200BC3B66 /* SpeechClientImpl */; };
 		2793D6012AD0226200BC3B66 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 2793D6002AD0226200BC3B66 /* ComposableArchitecture */; };
 		27B8E2712AC36A960006BA72 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2702AC36A960006BA72 /* ScrumdingerApp.swift */; };
 		27B8E2732AC36A960006BA72 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2722AC36A960006BA72 /* AppView.swift */; };
@@ -37,7 +35,6 @@
 		27D55DF32ACFD096003DB63A /* SpeechClient in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DF22ACFD096003DB63A /* SpeechClient */; };
 		27D55DF72ACFD388003DB63A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DF62ACFD388003DB63A /* Domain */; };
 		27FE20262AD0243400A1FC49 /* SpeechClient in Frameworks */ = {isa = PBXBuildFile; productRef = 27FE20252AD0243400A1FC49 /* SpeechClient */; };
-		27FE20282AD024A600A1FC49 /* DataManagerImpl in Frameworks */ = {isa = PBXBuildFile; productRef = 27FE20272AD024A600A1FC49 /* DataManagerImpl */; };
 		27FE202B2AD7C14A00A1FC49 /* MeetingFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 27FE202A2AD7C14A00A1FC49 /* MeetingFeature */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +103,6 @@
 				27774E722AD0230800009576 /* ComposableArchitecture in Frameworks */,
 				2793D5F72AD01DC900BC3B66 /* DataManager in Frameworks */,
 				27D55DF72ACFD388003DB63A /* Domain in Frameworks */,
-				27FE20282AD024A600A1FC49 /* DataManagerImpl in Frameworks */,
 				27D55DEE2ACFCCB0003DB63A /* Mock in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,9 +116,7 @@
 				27774E6E2AD022FA00009576 /* DataManager in Frameworks */,
 				27FE202B2AD7C14A00A1FC49 /* MeetingFeature in Frameworks */,
 				27D55DE22ACFCAC6003DB63A /* Domain in Frameworks */,
-				2793D5FF2AD0223200BC3B66 /* SpeechClientImpl in Frameworks */,
 				27D55DF32ACFD096003DB63A /* SpeechClient in Frameworks */,
-				27774E702AD022FE00009576 /* DataManagerImpl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +295,6 @@
 				2793D5F62AD01DC900BC3B66 /* DataManager */,
 				27774E712AD0230800009576 /* ComposableArchitecture */,
 				27FE20252AD0243400A1FC49 /* SpeechClient */,
-				27FE20272AD024A600A1FC49 /* DataManagerImpl */,
 			);
 			productName = ScrumdingerTests;
 			productReference = 2747486D2AC37EC400F1D9F6 /* ScrumdingerTests.xctest */;
@@ -324,10 +317,8 @@
 				27D55DE12ACFCAC6003DB63A /* Domain */,
 				27D55DEF2ACFCCBA003DB63A /* Mock */,
 				27D55DF22ACFD096003DB63A /* SpeechClient */,
-				2793D5FE2AD0223200BC3B66 /* SpeechClientImpl */,
 				2793D6002AD0226200BC3B66 /* ComposableArchitecture */,
 				27774E6D2AD022FA00009576 /* DataManager */,
-				27774E6F2AD022FE00009576 /* DataManagerImpl */,
 				27FE202A2AD7C14A00A1FC49 /* MeetingFeature */,
 			);
 			productName = Scrumdinger;
@@ -772,10 +763,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = DataManager;
 		};
-		27774E6F2AD022FE00009576 /* DataManagerImpl */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DataManagerImpl;
-		};
 		27774E712AD0230800009576 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 27B8E27E2AC36BC70006BA72 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
@@ -784,10 +771,6 @@
 		2793D5F62AD01DC900BC3B66 /* DataManager */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DataManager;
-		};
-		2793D5FE2AD0223200BC3B66 /* SpeechClientImpl */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SpeechClientImpl;
 		};
 		2793D6002AD0226200BC3B66 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -817,10 +800,6 @@
 		27FE20252AD0243400A1FC49 /* SpeechClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SpeechClient;
-		};
-		27FE20272AD024A600A1FC49 /* DataManagerImpl */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DataManagerImpl;
 		};
 		27FE202A2AD7C14A00A1FC49 /* MeetingFeature */ = {
 			isa = XCSwiftPackageProductDependency;

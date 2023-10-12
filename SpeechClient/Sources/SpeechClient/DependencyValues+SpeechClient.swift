@@ -1,5 +1,4 @@
 import Dependencies
-import SpeechClient
 
 public extension DependencyValues {
 	var speechClient: SpeechClient {

@@ -46,7 +46,7 @@ struct AppView: View {
 
 import Mock
 import Domain
-import DataManagerImpl
+import DataManager
 
 #Preview("Regular") {
 	return AppView(

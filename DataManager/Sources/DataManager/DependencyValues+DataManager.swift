@@ -1,4 +1,3 @@
-import DataManager
 import ComposableArchitecture
 
 public extension DependencyValues {

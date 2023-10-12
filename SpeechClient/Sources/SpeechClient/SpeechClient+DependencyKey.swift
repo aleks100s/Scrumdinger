@@ -1,5 +1,4 @@
 import ComposableArchitecture
-import SpeechClient
 import Speech
 
 extension SpeechClient: DependencyKey {

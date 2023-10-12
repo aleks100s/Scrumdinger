@@ -33,7 +33,7 @@ let package = Package(
 			name: "RecordMeeting",
 			dependencies: [
 				"Domain",
-				.product(name: "SpeechClientImpl", package: "SpeechClient"),
+				"SpeechClient",
 				"Shared",
 				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
 			]

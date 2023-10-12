@@ -1,7 +1,6 @@
 import Domain
 import XCTest
 import DataManager
-import DataManagerImpl
 import ComposableArchitecture
 @testable import Scrumdinger
 

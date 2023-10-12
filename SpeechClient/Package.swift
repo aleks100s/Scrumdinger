@@ -11,10 +11,6 @@ let package = Package(
         .library(
             name: "SpeechClient",
             targets: ["SpeechClient"]
-		),
-		.library(
-			name: "SpeechClientImpl",
-			targets: ["SpeechClientImpl"]
 		)
     ],
 	dependencies: [
@@ -23,11 +19,9 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-		.target(name: "SpeechClient"),
-        .target(
-			name: "SpeechClientImpl",
+		.target(
+			name: "SpeechClient",
 			dependencies: [
-				.byName(name: "SpeechClient"),
 				.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
 			]
 		)

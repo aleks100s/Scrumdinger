@@ -1,5 +1,4 @@
 import Foundation
-import DataManager
 import ComposableArchitecture
 
 extension DataManager: DependencyKey {
