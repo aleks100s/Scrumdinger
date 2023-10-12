@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		271DE1672ACDCA2B00A5C44B /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE1662ACDCA2B00A5C44B /* MeetingView.swift */; };
-		271DE1692ACF2CDD00A5C44B /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE1682ACF2CDD00A5C44B /* URL+.swift */; };
 		271DE1742ACF362400A5C44B /* ScrumdingerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE1732ACF362400A5C44B /* ScrumdingerUITests.swift */; };
 		274748772AC37EDC00F1D9F6 /* StandupFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274748762AC37EDC00F1D9F6 /* StandupFormTests.swift */; };
 		2747487B2AC4C55B00F1D9F6 /* StandupsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747487A2AC4C55B00F1D9F6 /* StandupsListTests.swift */; };
@@ -17,19 +15,10 @@
 		274748832AC4CFE100F1D9F6 /* StandupDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274748822AC4CFE100F1D9F6 /* StandupDetailTests.swift */; };
 		276A761F2AC707EB0047D5F3 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A761E2AC707EB0047D5F3 /* AppFeature.swift */; };
 		276A76212AC7581E0047D5F3 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76202AC7581E0047D5F3 /* AppTests.swift */; };
-		276A76462AC830780047D5F3 /* RecordMeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76452AC830780047D5F3 /* RecordMeetingView.swift */; };
-		276A76482AC830860047D5F3 /* RecordMeetingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76472AC830860047D5F3 /* RecordMeetingFeature.swift */; };
-		276A764B2AC830CF0047D5F3 /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A764A2AC830CF0047D5F3 /* MeetingHeaderView.swift */; };
-		276A764D2AC831060047D5F3 /* MeetingProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A764C2AC831060047D5F3 /* MeetingProgressViewStyle.swift */; };
-		276A764F2AC8312C0047D5F3 /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A764E2AC8312C0047D5F3 /* MeetingTimerView.swift */; };
-		276A76512AC831440047D5F3 /* SpeakerArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76502AC831440047D5F3 /* SpeakerArc.swift */; };
-		276A76532AC831570047D5F3 /* MeetingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76522AC831570047D5F3 /* MeetingFooterView.swift */; };
-		276A76592ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A76582ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift */; };
 		27774E6E2AD022FA00009576 /* DataManager in Frameworks */ = {isa = PBXBuildFile; productRef = 27774E6D2AD022FA00009576 /* DataManager */; };
 		27774E702AD022FE00009576 /* DataManagerImpl in Frameworks */ = {isa = PBXBuildFile; productRef = 27774E6F2AD022FE00009576 /* DataManagerImpl */; };
 		27774E722AD0230800009576 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 27774E712AD0230800009576 /* ComposableArchitecture */; };
 		2793D5F72AD01DC900BC3B66 /* DataManager in Frameworks */ = {isa = PBXBuildFile; productRef = 2793D5F62AD01DC900BC3B66 /* DataManager */; };
-		2793D5FB2AD01E1900BC3B66 /* DependencyValues+DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793D5FA2AD01E1900BC3B66 /* DependencyValues+DataManager.swift */; };
 		2793D5FF2AD0223200BC3B66 /* SpeechClientImpl in Frameworks */ = {isa = PBXBuildFile; productRef = 2793D5FE2AD0223200BC3B66 /* SpeechClientImpl */; };
 		2793D6012AD0226200BC3B66 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 2793D6002AD0226200BC3B66 /* ComposableArchitecture */; };
 		27B8E2712AC36A960006BA72 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2702AC36A960006BA72 /* ScrumdingerApp.swift */; };
@@ -39,19 +28,17 @@
 		27B8E2822AC36BD00006BA72 /* StandupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2812AC36BD00006BA72 /* StandupListView.swift */; };
 		27B8E2872AC36CD80006BA72 /* StandupsListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2862AC36CD80006BA72 /* StandupsListFeature.swift */; };
 		27B8E2892AC36E500006BA72 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2882AC36E500006BA72 /* CardView.swift */; };
-		27B8E28C2AC36E960006BA72 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E28B2AC36E960006BA72 /* TrailingIconLabelStyle.swift */; };
 		27B8E2902AC36FC10006BA72 /* StandupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E28F2AC36FC10006BA72 /* StandupFormView.swift */; };
 		27B8E2922AC36FEC0006BA72 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2912AC36FEC0006BA72 /* ThemePicker.swift */; };
 		27B8E2942AC370760006BA72 /* StandupFormFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8E2932AC370760006BA72 /* StandupFormFeature.swift */; };
 		27D55DE22ACFCAC6003DB63A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DE12ACFCAC6003DB63A /* Domain */; };
-		27D55DE82ACFCB9C003DB63A /* Theme+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D55DE72ACFCB9C003DB63A /* Theme+.swift */; };
-		27D55DEC2ACFCC71003DB63A /* Duration+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D55DEB2ACFCC71003DB63A /* Duration+.swift */; };
 		27D55DEE2ACFCCB0003DB63A /* Mock in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DED2ACFCCB0003DB63A /* Mock */; };
 		27D55DF02ACFCCBA003DB63A /* Mock in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DEF2ACFCCBA003DB63A /* Mock */; };
 		27D55DF32ACFD096003DB63A /* SpeechClient in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DF22ACFD096003DB63A /* SpeechClient */; };
 		27D55DF72ACFD388003DB63A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 27D55DF62ACFD388003DB63A /* Domain */; };
 		27FE20262AD0243400A1FC49 /* SpeechClient in Frameworks */ = {isa = PBXBuildFile; productRef = 27FE20252AD0243400A1FC49 /* SpeechClient */; };
 		27FE20282AD024A600A1FC49 /* DataManagerImpl in Frameworks */ = {isa = PBXBuildFile; productRef = 27FE20272AD024A600A1FC49 /* DataManagerImpl */; };
+		27FE202B2AD7C14A00A1FC49 /* MeetingFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 27FE202A2AD7C14A00A1FC49 /* MeetingFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		271DE1662ACDCA2B00A5C44B /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
-		271DE1682ACF2CDD00A5C44B /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		271DE1712ACF362400A5C44B /* ScrumdingerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrumdingerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271DE1732ACF362400A5C44B /* ScrumdingerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerUITests.swift; sourceTree = "<group>"; };
 		271DE17C2ACFC95600A5C44B /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
@@ -85,19 +70,10 @@
 		274748822AC4CFE100F1D9F6 /* StandupDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupDetailTests.swift; sourceTree = "<group>"; };
 		276A761E2AC707EB0047D5F3 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		276A76202AC7581E0047D5F3 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
-		276A76452AC830780047D5F3 /* RecordMeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMeetingView.swift; sourceTree = "<group>"; };
-		276A76472AC830860047D5F3 /* RecordMeetingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMeetingFeature.swift; sourceTree = "<group>"; };
-		276A764A2AC830CF0047D5F3 /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
-		276A764C2AC831060047D5F3 /* MeetingProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingProgressViewStyle.swift; sourceTree = "<group>"; };
-		276A764E2AC8312C0047D5F3 /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
-		276A76502AC831440047D5F3 /* SpeakerArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerArc.swift; sourceTree = "<group>"; };
-		276A76522AC831570047D5F3 /* MeetingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingFooterView.swift; sourceTree = "<group>"; };
 		276A76542AC8AEA80047D5F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		276A76552AC8AF380047D5F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		276A76562AC8B0430047D5F3 /* Scrumdinger.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Scrumdinger.xctestplan; sourceTree = "<group>"; };
-		276A76582ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+SpeechClient.swift"; sourceTree = "<group>"; };
 		2793D5F52AD01D4300BC3B66 /* DataManager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataManager; sourceTree = "<group>"; };
-		2793D5FA2AD01E1900BC3B66 /* DependencyValues+DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+DataManager.swift"; sourceTree = "<group>"; };
 		27B8E26D2AC36A960006BA72 /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B8E2702AC36A960006BA72 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		27B8E2722AC36A960006BA72 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -106,13 +82,12 @@
 		27B8E2812AC36BD00006BA72 /* StandupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupListView.swift; sourceTree = "<group>"; };
 		27B8E2862AC36CD80006BA72 /* StandupsListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupsListFeature.swift; sourceTree = "<group>"; };
 		27B8E2882AC36E500006BA72 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		27B8E28B2AC36E960006BA72 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		27B8E28F2AC36FC10006BA72 /* StandupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupFormView.swift; sourceTree = "<group>"; };
 		27B8E2912AC36FEC0006BA72 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		27B8E2932AC370760006BA72 /* StandupFormFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupFormFeature.swift; sourceTree = "<group>"; };
-		27D55DE72ACFCB9C003DB63A /* Theme+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+.swift"; sourceTree = "<group>"; };
-		27D55DEB2ACFCC71003DB63A /* Duration+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duration+.swift"; sourceTree = "<group>"; };
 		27D55DF12ACFCFE7003DB63A /* SpeechClient */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SpeechClient; sourceTree = "<group>"; };
+		27FE20292AD7BF0700A1FC49 /* MeetingFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MeetingFeature; sourceTree = "<group>"; };
+		27FE202C2AD7C43F00A1FC49 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +118,7 @@
 				27D55DF02ACFCCBA003DB63A /* Mock in Frameworks */,
 				2793D6012AD0226200BC3B66 /* ComposableArchitecture in Frameworks */,
 				27774E6E2AD022FA00009576 /* DataManager in Frameworks */,
+				27FE202B2AD7C14A00A1FC49 /* MeetingFeature in Frameworks */,
 				27D55DE22ACFCAC6003DB63A /* Domain in Frameworks */,
 				2793D5FF2AD0223200BC3B66 /* SpeechClientImpl in Frameworks */,
 				27D55DF32ACFD096003DB63A /* SpeechClient in Frameworks */,
@@ -153,14 +129,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		271DE1652ACDCA2500A5C44B /* Meeting */ = {
-			isa = PBXGroup;
-			children = (
-				271DE1662ACDCA2B00A5C44B /* MeetingView.swift */,
-			);
-			path = Meeting;
-			sourceTree = "<group>";
-		};
 		271DE1722ACF362400A5C44B /* ScrumdingerUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,8 +169,6 @@
 		2747487C2AC4C97A00F1D9F6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				271DE1652ACDCA2500A5C44B /* Meeting */,
-				276A76442AC8305B0047D5F3 /* RecordMeeting */,
 				2747487D2AC4C98500F1D9F6 /* StandupDetail */,
 				27B8E2852AC36CC70006BA72 /* StandupsList */,
 				27B8E28E2AC36FB60006BA72 /* StandupForm */,
@@ -219,30 +185,11 @@
 			path = StandupDetail;
 			sourceTree = "<group>";
 		};
-		276A76442AC8305B0047D5F3 /* RecordMeeting */ = {
-			isa = PBXGroup;
-			children = (
-				276A76492AC830C80047D5F3 /* Components */,
-				276A76452AC830780047D5F3 /* RecordMeetingView.swift */,
-				276A76472AC830860047D5F3 /* RecordMeetingFeature.swift */,
-			);
-			path = RecordMeeting;
-			sourceTree = "<group>";
-		};
-		276A76492AC830C80047D5F3 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				276A764A2AC830CF0047D5F3 /* MeetingHeaderView.swift */,
-				276A764E2AC8312C0047D5F3 /* MeetingTimerView.swift */,
-				276A76502AC831440047D5F3 /* SpeakerArc.swift */,
-				276A76522AC831570047D5F3 /* MeetingFooterView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		27B8E2642AC36A960006BA72 = {
 			isa = PBXGroup;
 			children = (
+				27FE202C2AD7C43F00A1FC49 /* Shared */,
+				27FE20292AD7BF0700A1FC49 /* MeetingFeature */,
 				2793D5F52AD01D4300BC3B66 /* DataManager */,
 				27D55DF12ACFCFE7003DB63A /* SpeechClient */,
 				271DE17C2ACFC95600A5C44B /* Domain */,
@@ -269,7 +216,6 @@
 			children = (
 				276A76552AC8AF380047D5F3 /* Info.plist */,
 				2747487C2AC4C97A00F1D9F6 /* Features */,
-				27B8E28D2AC36FA90006BA72 /* Library */,
 				27B8E2722AC36A960006BA72 /* AppView.swift */,
 				276A761E2AC707EB0047D5F3 /* AppFeature.swift */,
 				27B8E2702AC36A960006BA72 /* ScrumdingerApp.swift */,
@@ -297,24 +243,6 @@
 			path = StandupsList;
 			sourceTree = "<group>";
 		};
-		27B8E28A2AC36E880006BA72 /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				276A764C2AC831060047D5F3 /* MeetingProgressViewStyle.swift */,
-				27B8E28B2AC36E960006BA72 /* TrailingIconLabelStyle.swift */,
-			);
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		27B8E28D2AC36FA90006BA72 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				27B8E2952AC3754C0006BA72 /* Extensions */,
-				27B8E28A2AC36E880006BA72 /* DesignSystem */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
 		27B8E28E2AC36FB60006BA72 /* StandupForm */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,18 +251,6 @@
 				27B8E2932AC370760006BA72 /* StandupFormFeature.swift */,
 			);
 			path = StandupForm;
-			sourceTree = "<group>";
-		};
-		27B8E2952AC3754C0006BA72 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				2793D5FA2AD01E1900BC3B66 /* DependencyValues+DataManager.swift */,
-				276A76582ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift */,
-				27D55DEB2ACFCC71003DB63A /* Duration+.swift */,
-				27D55DE72ACFCB9C003DB63A /* Theme+.swift */,
-				271DE1682ACF2CDD00A5C44B /* URL+.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		27D55DE02ACFCAC6003DB63A /* Frameworks */ = {
@@ -412,6 +328,7 @@
 				2793D6002AD0226200BC3B66 /* ComposableArchitecture */,
 				27774E6D2AD022FA00009576 /* DataManager */,
 				27774E6F2AD022FE00009576 /* DataManagerImpl */,
+				27FE202A2AD7C14A00A1FC49 /* MeetingFeature */,
 			);
 			productName = Scrumdinger;
 			productReference = 27B8E26D2AC36A960006BA72 /* Scrumdinger.app */;
@@ -516,27 +433,13 @@
 				27B8E2732AC36A960006BA72 /* AppView.swift in Sources */,
 				27B8E2872AC36CD80006BA72 /* StandupsListFeature.swift in Sources */,
 				27B8E2822AC36BD00006BA72 /* StandupListView.swift in Sources */,
-				276A764D2AC831060047D5F3 /* MeetingProgressViewStyle.swift in Sources */,
-				276A764B2AC830CF0047D5F3 /* MeetingHeaderView.swift in Sources */,
 				27B8E2922AC36FEC0006BA72 /* ThemePicker.swift in Sources */,
 				27B8E2712AC36A960006BA72 /* ScrumdingerApp.swift in Sources */,
-				276A76462AC830780047D5F3 /* RecordMeetingView.swift in Sources */,
 				27B8E2892AC36E500006BA72 /* CardView.swift in Sources */,
 				274748812AC4C9A600F1D9F6 /* StandupDetailFeature.swift in Sources */,
-				27D55DE82ACFCB9C003DB63A /* Theme+.swift in Sources */,
-				276A76482AC830860047D5F3 /* RecordMeetingFeature.swift in Sources */,
-				276A76512AC831440047D5F3 /* SpeakerArc.swift in Sources */,
-				2793D5FB2AD01E1900BC3B66 /* DependencyValues+DataManager.swift in Sources */,
-				271DE1672ACDCA2B00A5C44B /* MeetingView.swift in Sources */,
 				2747487F2AC4C99200F1D9F6 /* StandupDetailView.swift in Sources */,
-				27D55DEC2ACFCC71003DB63A /* Duration+.swift in Sources */,
-				27B8E28C2AC36E960006BA72 /* TrailingIconLabelStyle.swift in Sources */,
-				276A764F2AC8312C0047D5F3 /* MeetingTimerView.swift in Sources */,
-				276A76532AC831570047D5F3 /* MeetingFooterView.swift in Sources */,
-				271DE1692ACF2CDD00A5C44B /* URL+.swift in Sources */,
 				27B8E2942AC370760006BA72 /* StandupFormFeature.swift in Sources */,
 				276A761F2AC707EB0047D5F3 /* AppFeature.swift in Sources */,
-				276A76592ACC8DC70047D5F3 /* DependencyValues+SpeechClient.swift in Sources */,
 				27B8E2902AC36FC10006BA72 /* StandupFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -918,6 +821,10 @@
 		27FE20272AD024A600A1FC49 /* DataManagerImpl */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DataManagerImpl;
+		};
+		27FE202A2AD7C14A00A1FC49 /* MeetingFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MeetingFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

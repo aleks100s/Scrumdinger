@@ -1,8 +1,7 @@
 import DataManager
-import DataManagerImpl
 import ComposableArchitecture
 
-extension DependencyValues {
+public extension DependencyValues {
 	var dataManager: DataManager {
 		get { self[DataManager.self] }
 		set { self[DataManager.self] = newValue }

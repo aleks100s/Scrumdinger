@@ -1,27 +1,41 @@
 import ComposableArchitecture
 import Foundation
 import Domain
-import SpeechClient
+import SpeechClientImpl
 
-struct RecordMeetingFeature: Reducer {
-	struct State: Equatable {
+public struct RecordMeetingFeature: Reducer {
+	public struct State: Equatable {
 		let standup: Standup
-		var secondsElapsed = 0
-		var speakerIndex = 0
-		var transcript = ""
+		var secondsElapsed: Int
+		var speakerIndex: Int
+		var transcript: String
 		@PresentationState var alert: AlertState<Action.Alert>?
 		
 		var durationRemaining: Duration {
 			standup.duration - .seconds(secondsElapsed)
 		}
+		
+		public init(
+			standup: Standup,
+			secondsElapsed: Int = 0,
+			speakerIndex: Int = 0,
+			transcript: String = "",
+			alert: AlertState<Action.Alert>? = nil
+		) {
+			self.standup = standup
+			self.secondsElapsed = secondsElapsed
+			self.speakerIndex = speakerIndex
+			self.transcript = transcript
+			self.alert = alert
+		}
 	}
 	
-	enum Action: Equatable {
-		enum Delegate: Equatable {
+	public enum Action: Equatable {
+		public enum Delegate: Equatable {
 			case saveMeeting(String)
 		}
 		
-		enum Alert: Equatable {
+		public enum Alert: Equatable {
 			case confirmDiscard
 			case confirmSave
 		}
@@ -38,8 +52,8 @@ struct RecordMeetingFeature: Reducer {
 	@Dependency(\.continuousClock) var clock
 	@Dependency(\.speechClient) var speechClient
 	@Dependency(\.dismiss) var dismiss
-	
-	var body: some ReducerOf<Self> {
+		
+	public var body: some ReducerOf<Self> {
 		Reduce { state, action in
 			switch action {
 			case .nextButtonTapped:
@@ -119,6 +133,8 @@ struct RecordMeetingFeature: Reducer {
 		}
 		.ifLet(\.$alert, action: /Action.alert)
 	}
+	
+	public init() {}
 }
 
 extension AlertState where Action == RecordMeetingFeature.Action.Alert {

@@ -1,7 +1,7 @@
 import SwiftUI
 import Domain
 
-extension Theme {
+public extension Theme {
 	var accentColor: Color {
 		switch self {
 		case .bubblegum,

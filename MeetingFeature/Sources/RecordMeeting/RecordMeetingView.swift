@@ -1,10 +1,14 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct RecordMeetingView: View {
+public struct RecordMeetingView: View {
 	let store: StoreOf<RecordMeetingFeature>
 	
-	var body: some View {
+	public init(store: StoreOf<RecordMeetingFeature>) {
+		self.store = store
+	}
+	
+	public var body: some View {
 		WithViewStore(
 			self.store, observe: { $0 }
 		) { viewStore in

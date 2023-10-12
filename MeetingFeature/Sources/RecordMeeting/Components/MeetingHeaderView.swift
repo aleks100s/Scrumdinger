@@ -1,5 +1,6 @@
 import SwiftUI
 import Domain
+import DesignSystem
 
 struct MeetingHeaderView: View {
 	let secondsElapsed: Int

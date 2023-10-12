@@ -1,11 +1,16 @@
 import SwiftUI
 import Domain
 
-struct MeetingProgressViewStyle: ProgressViewStyle {
+public struct MeetingProgressViewStyle: ProgressViewStyle {
 	let mainColor: Color
 	let accentColor: Color
 	
-	func makeBody(
+	public init(mainColor: Color, accentColor: Color) {
+		self.mainColor = mainColor
+		self.accentColor = accentColor
+	}
+	
+	public func makeBody(
 		configuration: Configuration
 	) -> some View {
 		ZStack {
